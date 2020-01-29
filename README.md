@@ -20,7 +20,7 @@ Verifies input and adds a new user to the database if valid.
 ### /auth
 * `POST /api/auth`
 
-Verifies input and creates a TOKEN KEY for an existing user if valid. 
+Verifies input and creates a token key for an existing user if valid.
 
 ### /expenses
 * `GET /api/expenses`
