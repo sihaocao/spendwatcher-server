@@ -1,26 +1,61 @@
-# Express Boilerplate!
+<img src='images/Landing_Page.JPG'>
 
-This is a boilerplate project used for starting new projects!
+# SpendWatcher -- web application
+* SpendWatcher allows anyone to track his or her expenditure information along with the ability to see a statistical breakdown for each expense category.
 
-## Set up
+# App Description
+* SpendWatcher is a full-stack web app built with React, CSS, Node, Express, and Postgresql. This website does not use any third-party API. This website is supported on Chrome, Firefox, and Safari. This app is a fully responsive website.
 
-Complete the following steps to start a new project (NEW-PROJECT-NAME):
+## Built with
+* Node
+* Express
+* PostgreSQL
 
-1. Clone this repository to your local machine `git clone BOILERPLATE-URL NEW-PROJECTS-NAME`
-2. `cd` into the cloned repository
-3. Make a fresh start of the git history for this project with `rm -rf .git && git init`
-4. Install the node dependencies `npm install`
-5. Move the example Environment file to `.env` that will be ignored by git and read by the express server `mv example.env .env`
-6. Edit the contents of the `package.json` to use NEW-PROJECT-NAME instead of `"name": "express-boilerplate",`
+## Endpoints
+### /users
+* `POST /api/users`
+
+Verifies input and adds a new user to the database if valid.
+
+### /auth
+* `POST /api/auth`
+
+Verifies input and creates a TOKEN KEY for an existing user if valid. 
+
+### /expenses
+* `GET /api/expenses`
+
+Returns an array of expense entries.
+
+* `GET /api/expenses/:expense_id`
+
+Returns an expense entry whose id matches `:expense_id`.
+
+* `POST /api/expenses`
+
+Verifies input and adds a new expense entry to the database if valid.
+
+* `PATCH /api/expenses/:expense_id`
+
+Updates input of an existing expense entry if valid.
+
+* `DELETE /api/expenses/:expense_id`
+
+Deletes an expense entry from the database.
+
+## Setting Up
+* Install dependencies: `npm install`
+* Create development and test databases: `createdb spendwatcher`, `createdb spendwatcher-test`
+* Create database user: `createuser spendwatcher_user`
+* Bootstrap development database: `spendwatcher npm run migrate`
+* Bootstrap test database: `spendwatcher-test npm run migrate`
+
+## Sample Data
+* To seed the database for development: `psql -U spendwatcher_user -d spendwatcher -f seeds/seed.spendwatcher_tables.sql`
 
 ## Scripts
+* Start application for development: `npm run dev`
+* Run tests: `npm test`
 
-Start the application `npm start`
-
-Start nodemon for the application `npm run dev`
-
-Run the tests `npm test`
-
-## Deploying
-
-When your new project is ready for deployment, add a new Heroku application with `heroku create`. This will make a new git remote called "heroku" and you can then `npm run deploy` which will push to this remote's master branch.
+## Authors
+* Sihao Cao
